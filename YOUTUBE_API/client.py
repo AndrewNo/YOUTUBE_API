@@ -11,3 +11,8 @@ class Client:
 
     def get(self, url, params):
         return requests.get(url, params=params).json()
+
+    def get_user_location(self):
+        send_url = 'http://ipinfo.io/json'
+        r = requests.get(send_url).json()
+        return r.get('loc')

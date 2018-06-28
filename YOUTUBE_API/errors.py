@@ -1,2 +1,3 @@
 class ApiErrors(Exception):
-    pass
+    def empty_result(self):
+        pass
