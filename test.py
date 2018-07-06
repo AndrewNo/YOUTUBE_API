@@ -1,6 +1,7 @@
 from YOUTUBE_API.client import Client
 
 client = Client('AIzaSyBoyPSgmbLVO1wW7iKFXaMxovwOO_RfWqI')
+# client = Client('AIzaSyBoyPSgmbLVO1wW7iKFXaMxovwOO_Rf')
 
 # i = 1
 # for item in client.Search.get_by_keyword('python'):
@@ -12,7 +13,7 @@ client = Client('AIzaSyBoyPSgmbLVO1wW7iKFXaMxovwOO_RfWqI')
 
 
 # i = 1
-# for item in client.Search.get_by_location('surfing''):
+# for item in client.Search.get_by_location('ddddd'):
 #     print(str(i) + '. ' + item.channelTitle)
 #     print(item.title)
 #     print(item.description)
@@ -35,11 +36,19 @@ client = Client('AIzaSyBoyPSgmbLVO1wW7iKFXaMxovwOO_RfWqI')
 #         i += 1
 #         print('-------------------------')
 
+# i = 1
+# for item in client.Search.get_by_keyword('python'):
+#     for rel_vid in client.Chanel.get_by_chanel_id(item.chanelId):
+#         print(str(i) + '. ' + rel_vid.channelTitle)
+#         print(rel_vid.title)
+#         print(rel_vid.description)
+#         i += 1
+#         print('-------------------------')
+
 i = 1
-for item in client.Search.get_by_keyword('python'):
-    for rel_vid in client.Chanel.get_by_chanel_id(item.chanelId):
-        print(str(i) + '. ' + rel_vid.channelTitle)
-        print(rel_vid.title)
-        print(rel_vid.description)
-        i += 1
-        print('-------------------------')
+for item in client.Video.get_most_popular():
+    print(str(i) + '. ' + item.channelTitle)
+    print(item.title)
+    print(item.description)
+    i += 1
+    print('-------------------------')

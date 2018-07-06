@@ -1,5 +1,6 @@
 from YOUTUBE_API.API_resourses.chanel import Chanel
 from YOUTUBE_API.API_resourses.search import Search
+from YOUTUBE_API.API_resourses.video import Video
 import requests
 
 
@@ -8,6 +9,7 @@ class Client:
         self.api_key = api_key
         self.Search = Search(self)
         self.Chanel = Chanel(self)
+        self.Video = Video(self)
 
     def get(self, url, params):
         return requests.get(url, params=params).json()
